@@ -5,7 +5,7 @@
 }
 body {
   overflow: hidden;
-  background-color: #d93025;
+  background-color: #ba5fc2;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 ul {
@@ -26,15 +26,13 @@ ul::-webkit-scrollbar-track {
 }
 
 ul::-webkit-scrollbar-thumb {
-  background: #fff;
+  background: #b9a4e9;
   border-radius: 10px;
 }
 
-.post-list::-webkit-scrollbar-thumb {
-  background: #7676d6;
-}
+
 .comment-list::-webkit-scrollbar-thumb {
-  background: #82dd82;
+  background: #6d74d6;
 }
 
 /* ul::-webkit-scrollbar-thumb:hover {
@@ -54,12 +52,37 @@ section {
 .user-item {
   position: relative;
   padding: 10px 0 10px 10px;
-  border-left: 2px solid wheat;
+  /* border-left: 2px solid wheat; */
   margin-bottom: 10px;
+  background-color: #b9a4e9;
+  border-radius: 5px  ;
+}
+.user-item::before {
+  content: "";
+  width: 20px;
+  left: -10px;
+  bottom: 0;
+  background-color: #b9a4e9;
+  height: 15px;
+  position: absolute;
+  z-index: -2;
+  border-radius: 5px;
+}
+.user-item::after{
+  content: "";
+  width: 20px;
+  left: -20px;
+  bottom: 3px;
+  background-color: #ba5fc2;
+  height: 20px;
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+
 }
 .username {
-  color: grey;
-  background-color: #eee;
+  color: #413c3c;
+  background-color: #f7b8b8;
   display: inline-block;
   padding: 2px 10px;
   border-radius: 5px;
@@ -70,12 +93,12 @@ section {
 .company,
 .address {
   font-weight: 600;
-  color: #eee;
+  color: #413c3c;
   font-size: 20px;
 }
 .address-title,
 .company-title {
-  color: yellow;
+  color: #253d8d;
   margin-bottom: 5px;
 }
 .links {
@@ -84,7 +107,7 @@ section {
   grid-template-columns: 1fr 1fr;
   gap: 10px;
   font-size: 18px;
-  color: rgb(151, 223, 223);
+  color: #97dfdf;
   font-weight: 700;
 }
 
@@ -95,7 +118,7 @@ section {
   padding: 5px 10px;
   margin: 5px;
   border-radius: 5px;
-  background-color: yellowgreen;
+  background-color: #7980ce;
   display: inline-block;
 }
 
@@ -103,11 +126,11 @@ section {
 .tel:hover,
 .email:hover,
 .website:hover {
-  color: aqua;
-  background-color: rgb(73, 97, 25);
+  color: white;
+  background-color: #253d8d;
 }
 .id {
-  color: #727272;
+  color: #3f0ba0;
   font-size: 48px;
   font-weight: 900;
   position: absolute;
@@ -121,7 +144,7 @@ section {
 .comment-item {
   margin-bottom: 10px;
 
-  background-color: #e07a7a;
+  background-color: #b08de7;
   color: #eee;
   padding: 10px 10px;
   text-transform: capitalize;
@@ -130,16 +153,24 @@ section {
   z-index: 0;
   /* text-align: center; */
 }
+.post-list::-webkit-scrollbar-thumb {
+  background: #b08de7;
+}
 .post-item::before,
 .comment-item::before {
   content: "";
   width: 20px;
   left: -10px;
   bottom: 0;
-  background-color: #e07a7a;
+  background-color: #b08de7;
   height: 15px;
   position: absolute;
   z-index: -2;
+  border-radius: 5px;
+
+}
+.comment-item::before {
+  background-color:#6d74d6 ;
 }
 .post-item::after,
 .comment-item::after {
@@ -147,11 +178,14 @@ section {
   width: 20px;
   left: -20px;
   bottom: 3px;
-  background-color: #d93025;
+  background-color: #ba5fc2;
   height: 20px;
   position: absolute;
   border-radius: 50%;
   z-index: -1;
+}
+.comment-item {
+  background-color: #6d74d6;
 }
 
 .m-10 {
@@ -165,14 +199,14 @@ section {
   margin: 5px;
   margin-top: 15px;
   border-radius: 5px;
-  background-color: #9fdfa2;
+  background-color: #565fc0;
   display: inline-block;
 
-  color: rgb(3, 43, 43);
+  color: #97dfdf;
 }
 .comment-email:hover {
-  color: aqua;
-  background-color: #092850;
+  color: #fff;
+  background-color: #253d8d;
 }
 
 .modal {
