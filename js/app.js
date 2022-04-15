@@ -54,7 +54,7 @@ const renderUser = (arr, elem) => {
 
 const renderPost = (arr, elem) => {
   elem.innerHTML = "";
-  elCommentList.innerHTML = ""
+  elCommentList.innerHTML = "";
 
   const postFragment = document.createDocumentFragment();
   arr.forEach((element) => {
@@ -102,12 +102,16 @@ async function getUser() {
   renderUser(data, elUserList);
 }
 async function getPost(num) {
+  elModal.classList.add("modal-show");
+
   const res = await fetch("https://jsonplaceholder.typicode.com/posts");
   const data = await res.json();
   let arr = data.filter((elem) => elem.userId == num);
   renderPost(arr, elPostList);
 }
 async function getComment(num) {
+  elModal.classList.add("modal-show");
+
   const res = await fetch("https://jsonplaceholder.typicode.com/comments");
   const data = await res.json();
   let arr = data.filter((elem) => elem.postId == num);
@@ -116,7 +120,7 @@ async function getComment(num) {
 
 elUserList.addEventListener("click", (e) => {
   //   console.log(e.target);
-  elModal.classList.add("modal-show");
+  // elModal.classList.add("modal-show");
 
   if (e.target.matches(".user-item")) {
     let num = e.target.dataset.userId;
@@ -130,7 +134,7 @@ elUserList.addEventListener("click", (e) => {
 });
 elPostList.addEventListener("click", (e) => {
   //   console.log(e.target);
-  elModal.classList.add("modal-show");
+  // elModal.classList.add("modal-show");
 
   if (e.target.matches(".post-item")) {
     let num = e.target.dataset.postId;
